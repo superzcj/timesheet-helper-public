@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>工时助手安装</title>
+  <style>
+    body{max-width:680px;margin:48px auto;padding:0 20px;font:16px/1.7 -apple-system,BlinkMacSystemFont,"Microsoft YaHei",sans-serif;color:#21313a}
+    h1{font-size:27px;margin-bottom:4px}p{color:#526973}ol{padding-left:24px}li{margin:16px 0}code{background:#eef5f7;padding:3px 7px;border-radius:5px;color:#155b74}button{border:1px solid #9abcc7;border-radius:6px;padding:5px 9px;background:#fff;color:#155b74;cursor:pointer}.tip{background:#edf7f9;border-radius:9px;padding:13px 16px}
+  </style>
+</head>
+<body>
+  <h1>安装工时助手</h1>
+  <p>Windows 和 Mac 的 Chrome、Edge、Arc 都可以使用。只需安装一次。</p>
+  <ol>
+    <li>确保已经解压安装包，并保留整个 <code>timesheet-helper</code> 文件夹。</li>
+    <li>在浏览器地址栏输入 <code>chrome://extensions</code>（Edge 可输入 <code>edge://extensions</code>），按回车。 <button type="button" data-copy="chrome://extensions">复制 Chrome 地址</button></li>
+    <li>打开「开发者模式」，点击「加载已解压的扩展程序」，选择本页面所在的 <code>timesheet-helper</code> 文件夹。</li>
+    <li>打开并登录工时系统，在工时列表或新增页面右下角点击「工时助手」。</li>
+  </ol>
+  <div class="tip">助手会先检查已填日期。选择月份后，可点击上班日标记个人休息，核对后再确认提交。</div>
+  <p>如果扩展没有出现，确认开发者模式保持开启，并刷新工时页面。更新和日期配置说明见同文件夹的 README.md。</p>
+  <script>
+    document.querySelector('[data-copy]').addEventListener('click', async function () {
+      try { await navigator.clipboard.writeText(this.dataset.copy); this.textContent = '已复制'; }
+      catch (_) { this.textContent = '请手动复制上方地址'; }
+    });
+  </script>
+</body>
+</html>

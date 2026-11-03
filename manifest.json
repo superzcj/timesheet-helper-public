@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "工时填报助手",
+  "version": "1.4.0",
+  "description": "读取统一日期配置，查重并填报每天 8 小时。",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://192.168.0.21/Data/AddWorkReport*",
+        "http://192.168.0.21/Data/WorkReportList*"
+      ],
+      "js": ["core.js", "api.js", "runner.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["workdays.json"],
+      "matches": ["http://192.168.0.21/*"]
+    }
+  ]
+}
